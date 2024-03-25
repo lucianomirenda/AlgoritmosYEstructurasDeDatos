@@ -23,6 +23,5 @@ public class EjercicioSucesion {
     }
 
     public void invertirArrayList(ArrayList<Integer> list) {
-        if()
     }
 }
