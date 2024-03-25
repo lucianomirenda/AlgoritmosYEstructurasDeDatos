@@ -1,4 +1,4 @@
-package tp1.ejercicio1;
+package practica1.ejercicio1;
 
 public class printNumbers{
 

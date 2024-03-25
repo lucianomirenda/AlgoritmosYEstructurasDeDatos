@@ -1,4 +1,4 @@
-package tp1.ejercicio4;
+package practica1.ejercicio4;
 
 public class SwapValores{
 	

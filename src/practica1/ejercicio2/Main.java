@@ -1,8 +1,8 @@
-package tp1.ejercicio2;
+package practica1.ejercicio2;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
 
 	public static void main(String[] args) {
 		
@@ -15,7 +15,7 @@ public class Main {
 		
 		while(n != 0) {
 			
-			arreglo = Sequence.arrayMultiplos(n);
+			arreglo = tp1.ejercicio2.Sequence.arrayMultiplos(n);
 			
 			for(int i=0;i<arreglo.length;i++) {
 				System.out.println("["+arreglo[i]+"]");

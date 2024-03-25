@@ -1,4 +1,4 @@
-package tp1.ejercicio5;
+package practica1.ejercicio5;
 
 public class Calculadora {
 	
