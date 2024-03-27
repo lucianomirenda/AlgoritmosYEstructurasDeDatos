@@ -11,8 +11,6 @@ public class SuperIterator {
 
         ArrayList<Integer> lista = new ArrayList<>();
 
-
-
         lista.add(1);
         lista.add(3);
         lista.add(4);
