@@ -1,4 +1,4 @@
-package tp1.ejercicio7;
+package practica1.ejercicio7;
 import java.util.Scanner;
 
 public class Input {

@@ -1,4 +1,4 @@
-package practica1;
+package practica1.ejercicio7;
 
 import java.util.List;
 
@@ -13,6 +13,8 @@ public class puntoG {
         for (int i : lista){
             System.out.println(i);
         }
+
+
 
 
     }

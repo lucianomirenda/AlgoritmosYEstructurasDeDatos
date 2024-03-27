@@ -1,9 +1,11 @@
-package practica1;
+package practica1.ejercicio7;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class EjercicioSucesion {
+
 
     private List<Integer> list = new ArrayList();
     public  List<Integer> calcuarSucesion(int n) {
@@ -22,6 +24,4 @@ public class EjercicioSucesion {
 
     }
 
-    public void invertirArrayList(ArrayList<Integer> list) {
-    }
 }

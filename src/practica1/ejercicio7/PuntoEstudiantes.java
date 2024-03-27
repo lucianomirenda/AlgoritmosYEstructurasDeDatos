@@ -1,6 +1,5 @@
-package practica1;
+package practica1.ejercicio7;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
