@@ -5,8 +5,9 @@ import java.awt.*;
 
 public class Queue extends List {
 
-
     public static void main(String[] args) {
+
+        System.out.println();
 
     }
 
