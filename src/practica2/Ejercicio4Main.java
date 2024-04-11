@@ -13,7 +13,7 @@ public class Ejercicio4Main {
         for (int i = 0; i < 6; i++) {
             System.out.println("Ingresar un numero");
             int num = scanner.nextInt();
-            treeTool.addNode(redBinariaLlena.arbol, num);
+            treeTool.insertarPorNivel(redBinariaLlena.arbol, num);
         }
 
         redBinariaLlena.arbol.entreNiveles(0,4);

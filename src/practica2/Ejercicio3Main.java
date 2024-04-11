@@ -16,7 +16,7 @@ public class Ejercicio3Main {
         int num = scanner.nextInt();
 
         while (num != 0) {
-            treeTool.addNode(contador.arbol,num);
+            treeTool.insertarPorNivel(contador.arbol,num);
             System.out.println("Ingrese un número");
             num = scanner.nextInt();
 
