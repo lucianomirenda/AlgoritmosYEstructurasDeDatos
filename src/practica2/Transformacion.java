@@ -9,6 +9,7 @@ public class Transformacion {
     }
 
     public BinaryTree<Integer> suma() {
+
         return suma(this.arbol);
     }
 
