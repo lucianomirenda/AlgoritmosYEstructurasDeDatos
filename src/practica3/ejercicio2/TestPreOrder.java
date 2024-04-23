@@ -1,6 +1,8 @@
-package practica3;
+package practica3.ejercicio2;
 
 import practica2.TreeTool;
+import practica3.GeneralTree;
+import practica3.GeneralTreeTool;
 
 public class TestPreOrder {
 

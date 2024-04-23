@@ -1,6 +1,7 @@
-package practica3;
+package practica3.ejercicio2;
 
 import practica1.ejercicio8.Queue;
+import practica3.GeneralTree;
 
 import java.util.LinkedList;
 import java.util.List;

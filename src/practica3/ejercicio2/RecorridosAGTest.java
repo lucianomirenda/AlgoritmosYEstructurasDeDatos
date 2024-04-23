@@ -1,8 +1,7 @@
-package practica3;
+package practica3.ejercicio2;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.List;
+import practica3.GeneralTree;
+import practica3.ejercicio2.RecorridosAG;
 
 public class RecorridosAGTest {
 
