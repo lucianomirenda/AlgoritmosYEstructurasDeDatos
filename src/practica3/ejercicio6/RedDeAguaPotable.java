@@ -1,4 +1,4 @@
-package practica3.ejercicio5;
+package practica3.ejercicio6;
 
 import practica3.GeneralTree;
 

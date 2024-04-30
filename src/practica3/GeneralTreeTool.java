@@ -20,6 +20,7 @@ public class GeneralTreeTool <T> {
         }
     }
 
+
     public List<T> listInOrden(GeneralTree<T> arbol) {
         List<T> lista = new LinkedList<>();
         listInOrden(arbol, lista);
