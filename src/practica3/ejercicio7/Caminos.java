@@ -26,7 +26,7 @@ public class Caminos {
     public List<Integer> caminoAHojaMasLejana() {
 
         List<Integer> maxList = new ArrayList<>();
-        ArrayList<Integer> lista = new ArrayList<>();
+        List<Integer> lista = new ArrayList<>();
 
         if (!(this.getArbol().isLeaf() && this.getArbol().isEmpty())) {
             maxLista(this.getArbol(), lista,maxList);
