@@ -70,6 +70,7 @@ public class ParcialArboles {
                         listaMax.add(num);
                     }
                 }
+
                 if(lista.size()>0){
                     lista.remove(lista.size()-1);
                 }
