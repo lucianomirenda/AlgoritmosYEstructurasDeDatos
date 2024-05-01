@@ -35,7 +35,6 @@ public class Caminos {
         return maxList;
     }
 
-
     private void maxLista(GeneralTree<Integer> arbol, List<Integer> lista, List<Integer> listaMax) {
 
         if (arbol.isLeaf()) {
@@ -57,5 +56,6 @@ public class Caminos {
         }
 
     }
+
 
 }
