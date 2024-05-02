@@ -40,10 +40,7 @@ public class ParcialArboles {
             if (arbol.getData() == 1) {
                 lista.add(1);
             }
-
             valores.calculo = valores.calculo + (nivel * arbol.getData());
-            System.out.println("[hoja] nivel: "+nivel+ " calculo: "+valores.calculo);
-
 
         } else {
 
@@ -55,13 +52,9 @@ public class ParcialArboles {
 
                 valores.calculo = valores.calculo + (nivel * arbol.getData());
 
-                System.out.println("[entra] nivel: "+nivel+ " calculo: "+valores.calculo+" max: "+valores.max);
-
                 int calculoAnterior = valores.calculo;
 
                 resolver(child, lista,listaMax, valores,nivel+1);
-
-                System.out.println("[sale] nivel: "+nivel+ " calculo: "+valores.calculo+" max: "+valores.max);
 
                 if (valores.calculo > valores.max) {
                     listaMax.clear();
