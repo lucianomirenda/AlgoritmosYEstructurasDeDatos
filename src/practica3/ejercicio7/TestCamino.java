@@ -19,6 +19,7 @@ public class TestCamino {
         camino.getArbol().getChildren().get(1).addChild(new GeneralTree<>(11));
 
         camino.getArbol().getChildren().get(1).getChildren().get(0).addChild(new GeneralTree<>(111));
+        camino.getArbol().getChildren().get(1).getChildren().get(0).getChildren().get(0).addChild(new GeneralTree<>(112));
 
 
         camino.getArbol().getChildren().get(0).getChildren().get(0).addChild(new GeneralTree<>(7));

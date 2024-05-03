@@ -25,36 +25,32 @@ public class Caminos {
 
     public List<Integer> caminoAHojaMasLejana() {
 
-        List<Integer> maxList = new ArrayList<>();
+        List<Integer> listaMax = new ArrayList<>();
         List<Integer> lista = new ArrayList<>();
 
         if (!(this.getArbol().isLeaf() && this.getArbol().isEmpty())) {
-            maxLista(this.getArbol(), lista,maxList);
+            caminoAHojaMasLejana(this.getArbol(), lista,listaMax);
         }
 
-        return maxList;
+        return listaMax;
     }
 
-    private void maxLista(GeneralTree<Integer> arbol, List<Integer> lista, List<Integer> listaMax) {
+    private void caminoAHojaMasLejana(GeneralTree<Integer> arbol, List<Integer> lista, List<Integer> listaMax) {
+
+        lista.add(arbol.getData());
 
         if (arbol.isLeaf()) {
-            lista.add(arbol.getData());
-        } else {
-
-            for (GeneralTree<Integer> child : arbol.getChildren()) {
-                lista.add(arbol.getData());
-                maxLista(child, lista,listaMax);
-                if (lista.size() > listaMax.size()) {
-                    listaMax.clear();
-                    for (Integer num : lista) {
-                        listaMax.add(num);
-                    }
-                }
-                lista.clear();
+            if (listaMax.size() < lista.size()) {
+                listaMax.clear();
+                listaMax.addAll(lista);
             }
 
+        } else {
+            for (GeneralTree<Integer> child : arbol.getChildren()) {
+                caminoAHojaMasLejana(child, lista, listaMax);
+            }
         }
-
+        lista.remove(lista.size() - 1);
     }
 
 
