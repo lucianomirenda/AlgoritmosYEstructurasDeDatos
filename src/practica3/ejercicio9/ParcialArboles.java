@@ -19,6 +19,23 @@ public class ParcialArboles {
 
     private static boolean esDeSeleccionPrivado(GeneralTree<Integer> arbol) {
 
+        if (arbol.isLeaf()) {
+            return true;
+        } else {
+            int min = Integer.MAX_VALUE;
+            boolean aux = true;
+            for (GeneralTree<Integer> child : arbol.getChildren()) {
+                esDeSeleccionPrivado(child);
+                min = Math.min(min, child.getData());
+
+            }
+
+            if (arbol.getData() == min) {
+                return true;
+            }
+
+
+        }
 
 
 
