@@ -22,19 +22,17 @@ public class ParcialArboles {
 
             while ((!cola.isEmpty()) && (esCreciente)) {
                 aux = cola.dequeque();
-                if (aux != null) {
 
+                if (aux != null) {
                     for (GeneralTree<Integer> child : aux.getChildren()) {
                         cantNodos++;
                         cola.enqueque(child);
                     }
-
                 } else {
                     if (!cola.isEmpty()) {
                         esCreciente = cantNodos == cantNodosAnterior + 1;
                         cantNodosAnterior = cantNodos;
                         cantNodos = 0;
-                        nivel++;
                         cola.enqueque(null);
                     }
                 }

@@ -2,9 +2,15 @@ package practica2;
 
 import practica1.ejercicio8.Queue;
 
-import java.lang.annotation.Target;
-
+import java.util.ArrayList;
+import java.util.List;
 public class TreeTool<T> {
+
+    private class Valores {
+        int max = -1;
+        int actual = 0;
+    }
+
 
     public void insertarPorNivel(BinaryTree<T> arbol, T dato) {
 
@@ -121,9 +127,40 @@ public class TreeTool<T> {
         System.out.println();
     }
 
+    public List<Integer> retornarListaMaxima(BinaryTree<Integer> arbol) {
+        List<Integer> lista = new ArrayList<>();
+        List<Integer> listaMaxima = new ArrayList<>();
+        Valores val = new Valores();
 
+        retornarListaMaxima(arbol,lista,listaMaxima,val);
 
+        return listaMaxima;
+    }
 
+    private void retornarListaMaxima(BinaryTree<Integer> arbol, List<Integer> lista, List<Integer> listaMaxima, Valores val){
+
+        lista.add(arbol.getData());
+        val.actual = arbol.getData() + val.actual;
+
+        if (arbol.isLeaf()) {
+            if(val.actual > val.max){
+                listaMaxima.clear();
+                listaMaxima.addAll(lista);
+                val.max = val.actual;
+            }
+        } else {
+            if (arbol.hasLeftChild()) {
+                retornarListaMaxima(arbol.getLeftChild(), lista, listaMaxima, val);
+            }
+            if (arbol.hasRightChild()) {
+                retornarListaMaxima(arbol.getRightChild(),lista, listaMaxima, val);
+            }
+        }
+
+        lista.remove(lista.size()-1);
+        val.actual = val.actual - arbol.getData();
+
+    }
 
 
 

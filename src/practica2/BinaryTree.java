@@ -1,5 +1,8 @@
 package practica2;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 
 import practica1.ejercicio8.Queue;
 
@@ -145,5 +148,75 @@ public class BinaryTree<T> {
         }
     }
 
+    public List<T> listaPreOrden(){
+
+        List<T> list = new ArrayList<>();
+
+        listaPreOrdenPrivado(this,list);
+
+        return list;
+
+    }
+
+    private void listaPreOrdenPrivado(BinaryTree<T> arbol,List<T> list) {
+
+        if(!arbol.isEmpty()){
+            list.add(arbol.getData());
+        }
+
+        if (arbol.hasLeftChild()) {
+            listaPreOrdenPrivado(arbol.getLeftChild(),list);
+        }
+
+        if (arbol.hasRightChild()) {
+            listaPreOrdenPrivado(arbol.getRightChild(),list);
+        }
+
+    }
+
+    public List<T> listaInOrder(){
+
+        List<T> list = new ArrayList<>();
+
+        listInOrderPrivado(this, list);
+
+        return list;
+
+    }
+
+    private void listInOrderPrivado(BinaryTree<T> arbol,List<T> list) {
+
+        if (arbol.hasLeftChild()) {
+            listInOrderPrivado(arbol.getLeftChild(), list);
+        }
+
+        list.add(arbol.getData());
+
+        if (arbol.hasRightChild()) {
+            listInOrderPrivado(arbol.getRightChild(),list);
+        }
+
+    }
+
+    public List<T> listaPostOrden(){
+        List<T> lista = new ArrayList<>();
+
+        listaPostOrdenPrivate(this,lista);
+
+        return lista;
+    }
+
+    private void listaPostOrdenPrivate(BinaryTree<T> arbol, List<T> lista) {
+        if (arbol.hasLeftChild()) {
+            listaPostOrdenPrivate(arbol.getLeftChild(), lista);
+        }
+
+        if (arbol.hasRightChild()) {
+            listaPostOrdenPrivate(arbol.getRightChild(), lista);
+        }
+
+        lista.add(arbol.getData());
+
+    }
 }
 
