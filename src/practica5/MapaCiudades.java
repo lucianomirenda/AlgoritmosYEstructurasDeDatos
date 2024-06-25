@@ -198,7 +198,6 @@ public class MapaCiudades {
             tanque = combustible;
             cargas++;
         }
-        System.out.println("min cargas"+min.cargas);
         if (origen == destino && cargas < min.cargas) {
             listaMin.clear();
             listaMin.addAll(listaAct);
