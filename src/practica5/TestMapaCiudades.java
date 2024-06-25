@@ -13,19 +13,17 @@ public class TestMapaCiudades {
         Vertex<String> v5 = mapa.grafo.createVertex("Buenos Aires");
         Vertex<String> v6 = mapa.grafo.createVertex("Bariloche");
 
-        mapa.grafo.connect(v1,v2);
-        mapa.grafo.connect(v2,v3);
-        mapa.grafo.connect(v3,v4);
-        mapa.grafo.connect(v2,v6);
-        mapa.grafo.connect(v6,v4);
-        mapa.grafo.connect(v1, v5);
-        mapa.grafo.connect(v5,v4);
+        mapa.grafo.connect(v1,v2,10);
+        mapa.grafo.connect(v2,v3,5);
+        mapa.grafo.connect(v3,v4,5);
+        mapa.grafo.connect(v2,v6,3);
+        mapa.grafo.connect(v6,v4,2);
+        mapa.grafo.connect(v1, v5,1);
+        mapa.grafo.connect(v5,v4,1);
 
         List<String> ciudades = new ArrayList<>();
-        ciudades.add("Bariloche");
-        ciudades.add("Roca");
 
-        System.out.println(mapa.devolverCaminoExceptuando("Cipolletti","Neuquen",ciudades));
+        System.out.println(mapa.devolverCaminoMinimo("Cipolletti","Neuquen"));
 
     }
 }

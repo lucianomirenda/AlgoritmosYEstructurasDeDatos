@@ -85,6 +85,52 @@ public class MapaCiudades {
         return encontre;
     }
 
+    private class Minimo{
+        public int distancia;
+
+        Minimo(int num) {
+            distancia = num;
+        }
+    }
+
+    public List<String> devolverCaminoMinimo(String ciudad1,String ciudad2){
+        boolean[] visitados = new boolean[this.grafo.getSize()];
+        List<String> listaActual = new LinkedList<>();
+        List<String> listaMin = new ArrayList<>();
+        Minimo min = new Minimo(Integer.MAX_VALUE);
+        if (!this.grafo.isEmpty()) {
+            Vertex<String> origen = this.grafo.search(ciudad1);
+            Vertex<String> destino = this.grafo.search(ciudad2);
+            if (origen != null && destino != null) {
+                devolverCaminoMinimo(origen, destino, visitados, listaActual, listaMin, 0, min);
+            }
+        }
+        return listaMin;
+    }
+
+    private void devolverCaminoMinimo(Vertex<String> origen, Vertex<String> destino, boolean[] visitados, List<String> listaActual, List<String> listaMin, int suma, Minimo min) {
+        visitados[origen.getPosition()] = true;
+        listaActual.add(origen.getData());
+        if ((origen == destino) && (suma < min.distancia)) {
+            min.distancia = suma;
+            listaMin.clear();
+            listaMin.addAll(listaActual);
+        } else {
+            List<Edge<String>> ady = this.grafo.getEdges(origen);
+            Iterator<Edge<String>> it = ady.iterator();
+            while (it.hasNext() && suma < min.distancia) {
+                Edge<String> v = it.next();
+                int j = v.getTarget().getPosition();
+                int aux = suma + v.getWeight();
+                if (!visitados[j] && aux < min.distancia) {
+                    devolverCaminoMinimo(v.getTarget(), destino, visitados, listaActual, listaMin, aux, min);
+                }
+            }
+        }
+        listaActual.remove(listaActual.size() - 1);
+        visitados[origen.getPosition()] = false;
+    }
+
 
 
 
