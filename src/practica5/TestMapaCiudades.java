@@ -14,16 +14,16 @@ public class TestMapaCiudades {
         Vertex<String> v6 = mapa.grafo.createVertex("Bariloche");
 
         mapa.grafo.connect(v1,v2,10);
-        mapa.grafo.connect(v2,v3,5);
-        mapa.grafo.connect(v3,v4,5);
-        mapa.grafo.connect(v2,v6,3);
-        mapa.grafo.connect(v6,v4,2);
-        mapa.grafo.connect(v1, v5,1);
-        mapa.grafo.connect(v5,v4,1);
+        mapa.grafo.connect(v2,v3,10);
+        mapa.grafo.connect(v3,v4,10);
+        mapa.grafo.connect(v2,v6,1);
+        mapa.grafo.connect(v6,v4,1);
+        mapa.grafo.connect(v1, v5,200);
+        mapa.grafo.connect(v5,v4,100);
 
         List<String> ciudades = new ArrayList<>();
 
-        System.out.println(mapa.devolverCaminoMinimo("Cipolletti","Neuquen"));
+        System.out.println(mapa.caminoConMenorCargaCombustile("Cipolletti","Neuquen",10));
 
     }
 }
