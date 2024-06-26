@@ -123,7 +123,33 @@ public class Recorridos<T> {
         }
     }
 
+    public void printBFS(Graph<T> grafo) {
+        boolean[] visitados = new boolean[grafo.getSize()];
+        for (int i = 0; i < grafo.getSize(); i++) {
+            if (!visitados[i]) {
+                Vertex<T> v = grafo.getVertex(i);
+                printBFS(grafo,visitados,v);
+            }
+        }
+    }
 
+    private void printBFS(Graph<T> grafo,boolean[] visitados,Vertex<T> v) {
+        Queue<Vertex<T>> cola = new Queue<>();
+        visitados[v.getPosition()] = true;
+        cola.enqueque(v);
+        while (!cola.isEmpty()) {
+            Vertex<T> aux = cola.dequeque();
+            System.out.println("soy "+aux.getData());
+            for (Edge<T> e : grafo.getEdges(aux)) {
+                int j = e.getTarget().getPosition();
+                if (!visitados[j]) {
+                    cola.enqueque(e.getTarget());
+                    visitados[j] = true;
+                }
+            }
+        }
+
+    }
 
 
 

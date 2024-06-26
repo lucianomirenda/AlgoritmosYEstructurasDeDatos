@@ -5,6 +5,7 @@ public class TestMapaCiudades {
 
     public static void main(String[] args) {
         MapaCiudades mapa = new MapaCiudades();
+        Recorridos reco = new Recorridos();
 
         Vertex<String> v1 = mapa.grafo.createVertex("Cipolletti");
         Vertex<String> v2 = mapa.grafo.createVertex("Fernandez Oro");
@@ -22,8 +23,10 @@ public class TestMapaCiudades {
         mapa.grafo.connect(v5,v4,100);
 
         List<String> ciudades = new ArrayList<>();
-
+        /*
         System.out.println(mapa.caminoConMenorCargaCombustile("Cipolletti","Neuquen",10));
+        */
+        reco.printBFS(mapa.grafo);
 
     }
 }
